@@ -1,0 +1,59 @@
+.aboutme{
+    text-align: center;
+}
+.aboutme h1 {
+    position: relative;
+    margin-bottom: 20px; /* Ensure there's space for the pseudo-element */
+}
+
+.aboutme h1::after {
+    content: ''; 
+    position: absolute;
+    width: 200px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #823422;
+    bottom: -10px; /* Adjust to place under the h1 */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+}
+.about-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    /* margin-right: 100px; */
+}
+.about-image img{
+    width: 500px;
+    /* margin-right: 100px; */
+}
+
+
+.about-text{
+    -webkit-border-radius: 25px;
+    border-radius: 25px;
+    -webkit-box-shadow: 29px 29px 67px #cba8a0, -29px -29px 67px #ffeee2;
+    box-shadow: 29px 29px 67px #cba8a0, -29px -29px 67px #ffeee2;
+    padding: 25px;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 786px) {
+    .aboutme{
+        text-align: center;
+    }
+    .about-info{
+        flex-direction: column;
+    }
+    .about-info img {
+        width: 100%;
+        max-width: 600px; 
+        margin: 0; 
+        margin-top: 20px;
+    }
+    .about-text{
+        margin: 20px;
+    }
+}
