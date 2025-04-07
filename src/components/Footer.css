@@ -1,0 +1,22 @@
+.footer {
+    text-align: center; 
+    padding: 1rem; 
+    background-color: #f8f9fa;
+    color: #212529; /* Neutral text color */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    border-top: 1px solid #e9ecef; /* Subtle top border */
+    width: 90%;
+}
+  
+.footer p {
+    margin: 0; /* Remove default paragraph margin */
+}
+  
+.footer strong {
+    color: #007BFF; /* Highlight the name in primary color */
+}
+  
+.footer p:hover {
+    color: #0056b3; /* Darken the text color on hover */
+}
+  

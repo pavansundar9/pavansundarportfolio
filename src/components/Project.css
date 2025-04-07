@@ -1,0 +1,163 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  margin: 3rem 0;
+  transition: all 0.3s ease;
+}
+
+.card img {
+  width: 300px;
+  height: 200px;
+  border-radius: 1rem;
+  border: 1.5px solid black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: transform 0.3s ease, border-radius 0.3s ease;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .text {
+  flex: 1;
+  text-align: left;
+  margin-left: 300px;
+  margin-top: -35px;
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  z-index: 2;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card .text h1 {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.card .text p {
+  margin-block-start: -10px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.card .buttons {
+  display: none;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card .buttons button {
+  width: 7rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Individual Button Styling */
+#code {
+  background-color: #222;
+  color: #fff;
+}
+
+#code:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+#live {
+  background-color: rgb(99, 99, 249);
+  color: #fff;
+}
+
+#live:hover {
+  background-color: rgb(80, 80, 220);
+  transform: translateY(-2px);
+}
+
+/* Hover Effects */
+.card:hover img {
+  transform: scale(1.2) translateX(20px);
+  border-radius: 0.3rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover .text {
+  transform: scale(0.95);
+  border-radius: 1rem;
+  background-color: rgb(242, 177, 130);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover .buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    position: static;
+  }
+
+  .card img {
+    position: static;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+
+  .card .text {
+    margin-left: 0;
+    margin-top: 0;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .card .buttons {
+    justify-content: center;
+  }
+
+  .card:hover img {
+    transform: scale(1.1);
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 375px) {
+  .card {
+    padding: 0.5rem;
+    margin: 1.5rem auto;
+  }
+  
+  .card .text {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+  
+  .card .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card .buttons button {
+    width: 80%;
+    margin: 0.25rem 0;
+  }
+}

@@ -1,0 +1,94 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: white;
+  border-radius: 200px;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+  
+.navbar h1 {
+    font-size: 2rem;
+    /* font-weight: 100; */
+    margin: 0;
+}
+  
+#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 50px;
+}
+  
+#menu li {
+    margin-left: 40px;
+}
+  
+#menu a {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+#menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px; 
+  width: 0;
+  height: 2px; 
+  background-color: currentColor; 
+  transition: width 0.3s ease-in-out;
+}
+
+#menu a:hover::after {
+  width: 100%; 
+}
+
+
+.navbar a:hover {
+  text-decoration: underline;
+  color: #d5af14;
+  animation: bounce 0.5s;
+}
+  
+.navbar-name {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+  
+  /* Show navbar name when scrolled past hero */
+  .navbar-name.visible {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+      scale: (1);
+    }
+    50% {
+      transform: translateY(-10px);
+      scale: (1.3);
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar{
+        padding: 20px;
+    }
+    #menu {
+      display: none;
+    }
+  }
+  
