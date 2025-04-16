@@ -49,6 +49,8 @@
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   transition: color 0.3s;
+  word-break: break-word; /* Allows the text to break */
+  overflow-wrap: break-word; /* Allows the text to break */
 }
 
 .contact-link:hover {
@@ -121,5 +123,14 @@
   .form-button{
     align-self: center;
     width: 80%;
+  }
+
+  .contact-link {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+  
+  /* Specifically target the email which is likely the longest */
+  .contact-link[href^="mailto"] {
+    font-size: 0.9rem; /* Even smaller for email */
   }
 }

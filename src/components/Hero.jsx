@@ -2,7 +2,6 @@ import React, { useEffect, useState, forwardRef } from 'react';
 import './Hero.css';
 import heroImage from '../images/hero0.png';
 import gitlogo from '../images/github.png';
-// import instalogo from '../images/insta_logo.png';
 import linkedinlogo from '../images/linkedin_logo.png';
 
 const Hero = forwardRef(({ scrollToContact, contactMeRef }, ref) => {
@@ -27,14 +26,17 @@ const Hero = forwardRef(({ scrollToContact, contactMeRef }, ref) => {
     };
   }, []);
 
-  const scaleValue = Math.max(isSmallScreen ? 1 - scrollY / 300 : 1 - scrollY / 200, 0);
+  // Slightly more gentle scaling calculation
+  const scaleValue = Math.max(isSmallScreen ? 1 - scrollY / 1200 : 1 - scrollY / 200, 0.75);
 
   useEffect(() => {
     const navbarName = document.querySelector('.navbar-name');
-    if (scrollY > 150) {
-      navbarName.classList.add('visible');
-    } else {
-      navbarName.classList.remove('visible');
+    if (navbarName) {
+      if (scrollY > 150) {
+        navbarName.classList.add('visible');
+      } else {
+        navbarName.classList.remove('visible');
+      }
     }
   }, [scrollY]);
 
@@ -56,7 +58,8 @@ const Hero = forwardRef(({ scrollToContact, contactMeRef }, ref) => {
         <p>Hello World <span className='wave'>👋</span> ,</p>
         <div className="hero-name">
           <p>I'm </p>
-          <h1
+          <h1 
+            className="animated-name"
             style={{
               transform: `scale(${scaleValue})`,
               transition: 'transform 0.2s ease-in-out',
