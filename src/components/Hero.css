@@ -216,7 +216,8 @@
 }
 
 .resume:hover {
-    color: #3a7ca5;
+    color: #7A2C1B;
+    transform: scale(1.1);
     background-color: #fcfcdd;
     border-radius: 2rem;
     text-decoration: none;
@@ -227,7 +228,7 @@
 }
 
 .resume:focus {
-    outline: 2px dashed #3a7ca5;
+    outline: 2px dashed #7A2C1B;
     outline-offset: 4px;
 }
 
@@ -278,7 +279,7 @@
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    background-color: #fcfcdd;
+    background-color: #fcf    cdd;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -443,8 +444,7 @@
         margin-top: 20px;
     }
 
-    .cta, 
-    .resume {
+    .cta{
         width: 100%;
         padding: 10px 20px;
     }

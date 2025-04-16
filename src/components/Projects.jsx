@@ -49,7 +49,7 @@ const Projects = React.forwardRef((props,ref)=> {
           />
         ))}
       </div>
-      <button className="projects-button">All-projects</button>
+      {/* <button className="projects-button">All-projects</button> */}
     </section>
   );
 });

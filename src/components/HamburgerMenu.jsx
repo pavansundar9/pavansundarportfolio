@@ -78,10 +78,10 @@ const HamburgerMenu = ({ scrollToSection, refs }) => {
 
         {/* Social Media Links */}
         <div className="menu-social-links">
-          <a href="#" className="social-icon" aria-label="GitHub">
+          <a href="https://github.com/pavansundar9/" className="social-icon" aria-label="GitHub">
             <i className="fab fa-github"></i>
           </a>
-          <a href="#" className="social-icon" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/pavan-sundar/" className="social-icon" aria-label="LinkedIn">
             <i className="fab fa-linkedin-in"></i>
           </a>
           {/* <a href="#" className="social-icon" aria-label="Twitter">

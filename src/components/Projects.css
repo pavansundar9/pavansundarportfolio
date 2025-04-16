@@ -40,25 +40,38 @@
 .projects-button {
   display: block;
   margin: 50px auto 20px;
-  padding: 12px 30px;
-  background-color: #222;
+  padding: 16px 40px; 
+  /* background-color: #FFC107;  */
+  /* background-color: #222; */
+  background-color: #3a7ca5;
   color: white;
   border: none;
-  border-radius: 30px;
-  font-size: 1rem;
+  border-radius: 10px; 
+  font-size: 1.25rem; /* Increased font size */
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  text-align: center;
+  min-width: 200px; /* Minimum width to ensure button is bigger */
 }
 
 .projects-button:hover {
-  transform: translateY(-3px);
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  background-color: rgb(99, 99, 249);
+  transform: translateY(-5px); /* Levitation effect */
+  background-color: #222;
+  /* background-color: rgb(99, 99, 249); */
+  border-radius: 20px; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow when hovering */
+  clip-path: polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0% 50%); /* Hexagon shape like in image */
 }
 
+/* Add a subtle active state for when the button is clicked */
+.projects-button:active {
+  transform: translateY(-2px); /* Less levitation when clicked */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  background-color: rgb(117, 117, 231);
+}
 @media screen and (max-width: 768px) {
   .projects-section {
     padding: 40px 15px;

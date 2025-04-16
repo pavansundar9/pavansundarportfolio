@@ -42,17 +42,6 @@ const Hero = forwardRef(({ scrollToContact, contactMeRef }, ref) => {
 
   return (
     <div className="HeroSection" ref={ref}>
-      {/* Social Media Icons (Left) */}
-      <div className="social-media-other">
-        <div className="line"></div>
-        <a href="https://github.com/pavansundar9/" target="_blank" rel="noopener noreferrer">
-          <img className="social-icon" src={gitlogo} alt="Github logo" />
-        </a>
-        <a href="https://www.linkedin.com/in/pavan-sundar/" target="_blank" rel="noopener noreferrer">
-          <img className="social-icon" src={linkedinlogo} alt="LinkedIn logo" />
-        </a>
-      </div>
-
       {/* Hero Text Section */}
       <div className="hero-text">
         <p>Hello World <span className='wave'>👋</span> ,</p>
