@@ -23,9 +23,13 @@
 }
 
 .contact-grid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 3rem; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .contact-links {
@@ -49,8 +53,8 @@
   color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   transition: color 0.3s;
-  word-break: break-word; /* Allows the text to break */
-  overflow-wrap: break-word; /* Allows the text to break */
+  word-break: break-word; 
+  overflow-wrap: break-word;
 }
 
 .contact-link:hover {
@@ -64,6 +68,7 @@
 
 .contact-form {
   font-size: 1.25rem;
+  min-width: 400px;
 }
 
 .form {
@@ -111,7 +116,7 @@
   background-color: #e55300; /* brand-orange/90 */
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 480px) {
   .contact-grid{
     grid-template-columns: 1fr; 
   }
@@ -126,11 +131,15 @@
   }
 
   .contact-link {
-    font-size: 1rem; /* Smaller font size for mobile */
+    font-size: 1rem;
   }
   
   /* Specifically target the email which is likely the longest */
   .contact-link[href^="mailto"] {
     font-size: 0.9rem; /* Even smaller for email */
+  }
+
+  .contact-item a{
+    margin-left: 30px;
   }
 }

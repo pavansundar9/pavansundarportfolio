@@ -21,8 +21,11 @@ const HamburgerMenu = ({ scrollToSection, refs }) => {
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isOpen && !event.target.closest('#responsive_menu') &&
-        !event.target.closest('.hamburger-menu')) {
+      if (
+        isOpen &&
+        !event.target.closest('#responsive_menu') &&
+        !event.target.closest('.hamburger-menu')
+      ) {
         setIsOpen(false);
       }
     };
@@ -35,16 +38,48 @@ const HamburgerMenu = ({ scrollToSection, refs }) => {
 
   // Prevent scrolling when menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
     return () => {
       document.body.style.overflow = 'auto';
     };
   }, [isOpen]);
+
+  // Track active section on scroll
+  useEffect(() => {
+    const sectionRefs = {
+      hero: refs.heroRef,
+      about: refs.aboutMeRef,
+      skills: refs.skillsRef,
+      projects: refs.projectsRef,
+      contact: refs.contactMeRef,
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6, // 60% of section in view
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const matchedSection = Object.keys(sectionRefs).find(
+            (key) => sectionRefs[key]?.current === entry.target
+          );
+          if (matchedSection) {
+            setActiveSection(matchedSection);
+          }
+        }
+      });
+    }, observerOptions);
+
+    // Observe each section
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref?.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, [refs]);
 
   return (
     <>
@@ -84,13 +119,10 @@ const HamburgerMenu = ({ scrollToSection, refs }) => {
           <a href="https://www.linkedin.com/in/pavan-sundar/" className="social-icon" aria-label="LinkedIn">
             <i className="fab fa-linkedin-in"></i>
           </a>
-          {/* <a href="#" className="social-icon" aria-label="Twitter">
-            <i className="fab fa-twitter"></i>
-          </a> */}
         </div>
       </ul>
 
-      {/* Overlay for when menu is open */}
+      {/* Overlay */}
       <div className={`menu-overlay ${isOpen ? 'active' : ''}`}></div>
     </>
   );

@@ -12,7 +12,9 @@ const projects = [
     desktopImg: 'images/ipl_desktop.png', 
     description: iplDes, 
     codeLink: 'https://github.com/pavansundar9/ipl-manage', 
-    liveLink: '' 
+    liveLink: '',
+    projectType: 'Full Stack',
+    skills: ['Angular', 'Spring Boot', 'MySQL', 'REST API', 'JWT Authentication']
   },
   { 
     name: 'FoodFlow', 
@@ -20,7 +22,9 @@ const projects = [
     description: foodflowDes, 
     mobileImg: 'images/foodflow_mobile.png', 
     codeLink: 'https://github.com/pavansundar9/FoodFlow', 
-    liveLink: '' 
+    liveLink: 'https://foodflow.infinityfreeapp.com/?i=1',
+    projectType: 'Full Stack',
+    skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL']
   },
   { 
     name: 'WeatherOut', 
@@ -28,11 +32,13 @@ const projects = [
     description: weatherOutDes, 
     mobileImg: 'images/weatherOut_mobile.jpg', 
     codeLink: 'https://github.com/pavansundar9/WeatherOut', 
-    liveLink: 'https://pavansundar9.github.io/WeatherOut/' 
+    liveLink: 'https://pavansundar9.github.io/WeatherOut/',
+    projectType: 'Front End',
+    skills: ['HTML', 'CSS', 'JavaScript', 'Chart.js', 'OpenWeather API']
   }
 ];
 
-const Projects = React.forwardRef((props,ref)=> {
+const Projects = React.forwardRef((props, ref) => {
   return (
     <section id="projects" className="projects-section" ref={ref}>
       <h2>Projects</h2>
@@ -46,6 +52,8 @@ const Projects = React.forwardRef((props,ref)=> {
             description={project.description}
             codeLink={project.codeLink}
             liveLink={project.liveLink}
+            projectType={project.projectType}
+            skills={project.skills}
           />
         ))}
       </div>

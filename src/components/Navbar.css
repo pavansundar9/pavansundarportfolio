@@ -85,7 +85,7 @@
   
   @media screen and (max-width: 768px) {
     .navbar{
-        padding: 20px;
+      padding: 30px;
     }
     #menu {
       display: none;
